@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.0">
+    <persistence-unit name="hospital-persistence-unit" transaction-type="RESOURCE_LOCAL">
+        <class>org.example.entidades.Hospital</class>
+        <class>org.example.entidades.Departamento</class>
+        <class>org.example.entidades.Sala</class>
+        <class>org.example.entidades.Persona</class>
+        <class>org.example.entidades.Medico</class>
+        <class>org.example.entidades.Paciente</class>
+        <class>org.example.entidades.HistoriaClinica</class>
+        <class>org.example.entidades.Cita</class>
+        <class>org.example.entidades.Matricula</class>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="org.h2.Driver"/>
+            <property name="jakarta.persistence.jdbc.url"
+                      value="jdbc:h2:file:./data/hospidb;DB_CLOSE_DELAY=-1;LOCK_TIMEOUT=20000"/>
+            <property name="jakarta.persistence.jdbc.user" value="sa"/>
+            <property name="jakarta.persistence.jdbc.password" value=""/>
+
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.highlight_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>
